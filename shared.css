@@ -1,0 +1,122 @@
+/* shared.css — BehindCamping site design system */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --forest:   #0d1f0f;
+  --pine:     #1a3a1c;
+  --moss:     #2d5e32;
+  --fern:     #4a8c50;
+  --sage:     #7ab87f;
+  --mist:     #b8d8bb;
+  --snow:     #f4f7f4;
+  --ink:      #0a140b;
+  --amber:    #c8852a;
+  --dusk:     #8faaaa;
+
+  --serif:    'DM Serif Display', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+
+  --radius:   4px;
+  --max:      860px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--snow);
+  color: var(--forest);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--forest);
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+nav .brand {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--mist);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav .brand span { color: var(--sage); }
+nav .nav-links { display: flex; gap: 24px; list-style: none; }
+nav .nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+nav .nav-links a:hover { color: var(--sage); }
+
+/* FOOTER */
+footer {
+  background: var(--forest);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 32px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+footer a { color: var(--sage); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* PROSE PAGES */
+.prose-page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+}
+.prose-page h1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 42px);
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.prose-page .meta {
+  font-size: 12px;
+  color: var(--fern);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--mist);
+}
+.prose-page h2 {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--pine);
+  margin: 40px 0 12px;
+}
+.prose-page p { margin-bottom: 16px; color: #2a3c2b; font-size: 15px; }
+.prose-page ul { padding-left: 20px; margin-bottom: 16px; }
+.prose-page li { margin-bottom: 8px; color: #2a3c2b; font-size: 15px; }
+.prose-page a { color: var(--moss); }
+.prose-page strong { color: var(--ink); }
+
+/* UTILITY */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moss);
+  border: 1px solid var(--fern);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
