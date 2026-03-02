@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — BehindCamping</title>
+<meta name="description" content="BehindCamping — dry-weather forecasts, 3D AR camera, nearby camp shops, and live traffic radar home. Built for iPhone.">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* HERO */
+  .lp-hero {
+    background: var(--forest);
+    padding: 96px 32px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .lp-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% -10%, rgba(74,140,80,0.22) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 50% at 10% 100%, rgba(45,94,50,0.1) 0%, transparent 60%);
+  }
+  .lp-hero .tag { position: relative; margin-bottom: 24px; display: inline-block; }
+  .lp-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 7vw, 72px);
+    color: #fff;
+    line-height: 1.05;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 16px;
+  }
+  .lp-hero h1 em { font-style: italic; color: var(--sage); }
+  .lp-hero .subtitle {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,0.45);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .lp-hero .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .btn-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+  .btn-dl:hover { opacity: 0.88; }
+
+  /* FEATURE SECTIONS */
+  .feature-section {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 96px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .feature-section.reverse { direction: rtl; }
+  .feature-section.reverse > * { direction: ltr; }
+  .feature-section + .feature-section {
+    border-top: 1px solid var(--mist);
+    padding-top: 80px;
+  }
+
+  .feat-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fern);
+    margin-bottom: 14px;
+  }
+  .feat-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--mist);
+    display: inline-block;
+    background: var(--pine);
+    padding: 2px 10px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+  .feat-title {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.5vw, 38px);
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .feat-body {
+    font-size: 15px;
+    color: #4a5e4b;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .feat-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .feat-bullets li {
+    font-size: 14px;
+    color: #3a4e3b;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--mist);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .feat-bullets li::before {
+    content: '—';
+    color: var(--fern);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Visual mockup placeholder */
+  .feat-visual {
+    background: var(--forest);
+    border-radius: 4px;
+    aspect-ratio: 9 / 16;
+    max-width: 260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .feat-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(74,140,80,0.15) 0%, transparent 70%);
+  }
+  .feat-visual-icon {
+    font-size: 48px;
+    position: relative;
+  }
+  .feat-visual-label {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--sage);
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .feat-visual-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--pine);
+    padding: 56px 32px;
+  }
+  .stats-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 42px;
+    color: var(--sage);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* CTA BOTTOM */
+  .lp-cta {
+    background: var(--forest);
+    padding: 96px 32px;
+    text-align: center;
+  }
+  .lp-cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 48px);
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .lp-cta p {
+    color: rgba(255,255,255,0.4);
+    font-size: 15px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .platform-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 680px) {
+    .feature-section {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .feature-section.reverse { direction: ltr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Behind<span>Camping</span></a>
+  <ul class="nav-links">
+    <li><a href="marketing.html">Features</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="privacy-policy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <span class="tag">iPhone App</span>
+  <h1>Your Outdoor Edge.<br><em>Before, During & After.</em></h1>
+  <p class="subtitle">BehindCamping puts a dry-weather forecast, AR camera, shop finder, and live traffic radar in your pocket — every time you head out.</p>
+  <div class="cta-row">
+    <a href="#" class="btn-dl">Download on the App Store</a>
+    <a href="support.html" style="color:var(--sage);text-decoration:none;font-size:13px;font-weight:500;">Get Support</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div>
+      <p class="stat-num">4</p>
+      <p class="stat-label">Core features</p>
+    </div>
+    <div>
+      <p class="stat-num">7</p>
+      <p class="stat-label">Day forecast</p>
+    </div>
+    <div>
+      <p class="stat-num">4K</p>
+      <p class="stat-label">AR camera</p>
+    </div>
+    <div>
+      <p class="stat-num">Live</p>
+      <p class="stat-label">Traffic data</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE 1: WEATHER -->
+<section class="feature-section">
+  <div>
+    <p class="feat-label">Tab 01</p>
+    <h2 class="feat-title">Dry-Weather Forecast</h2>
+    <p class="feat-body">A 7-day camping-specific forecast that goes beyond temperature. Know exactly whether conditions are safe before you pitch your tent.</p>
+    <ul class="feat-bullets">
+      <li>Camp safety score per day</li>
+      <li>Rain chance, wind, humidity, UV index, and visibility</li>
+      <li>Daily tips from the built-in Camp Advisor</li>
+      <li>Green or red safe-to-camp indicator at a glance</li>
+    </ul>
+  </div>
+  <div class="feat-visual">
+    <div class="feat-visual-icon">☀️</div>
+    <p class="feat-visual-label">Dry & Clear</p>
+    <p class="feat-visual-sub">Safe to camp</p>
+  </div>
+</section>
+
+<!-- FEATURE 2: CAMERA -->
+<section class="feature-section reverse">
+  <div>
+    <p class="feat-label">Tab 02</p>
+    <h2 class="feat-title">3D AR Camera</h2>
+    <p class="feat-body">Capture the outdoors in four specialized modes powered by ARKit. From star-filled skies to mapped terrain, every shot has depth.</p>
+    <ul class="feat-bullets">
+      <li>Landscape, Terrain, Night, and Panorama modes</li>
+      <li>AR depth layer on every shot</li>
+      <li>Terrain mode with feature point mapping</li>
+      <li>Night mode with adjusted sensor exposure</li>
+      <li>Photos saved directly to your photo library</li>
+    </ul>
+  </div>
+  <div class="feat-visual">
+    <div class="feat-visual-icon">📸</div>
+    <p class="feat-visual-label">3D · 4K</p>
+    <p class="feat-visual-sub">AR Viewfinder</p>
+  </div>
+</section>
+
+<!-- FEATURE 3: SHOPS -->
+<section class="feature-section">
+  <div>
+    <p class="feat-label">Tab 03</p>
+    <h2 class="feat-title">Nearby Camp Shops</h2>
+    <p class="feat-body">An interactive map of everything around your campsite — gear stores, food suppliers, and medical facilities — with live status and navigation.</p>
+    <ul class="feat-bullets">
+      <li>Filter by gear, food, or medical category</li>
+      <li>Ratings, review count, and opening hours</li>
+      <li>One tap to navigate with Apple Maps</li>
+      <li>Distance shown from your current location</li>
+    </ul>
+  </div>
+  <div class="feat-visual">
+    <div class="feat-visual-icon">🗺</div>
+    <p class="feat-visual-label">Shops Nearby</p>
+    <p class="feat-visual-sub">Live map</p>
+  </div>
+</section>
+
+<!-- FEATURE 4: TRAFFIC -->
+<section class="feature-section reverse">
+  <div>
+    <p class="feat-label">Tab 04</p>
+    <h2 class="feat-title">Traffic Radar Home</h2>
+    <p class="feat-body">Know what is waiting on the road before you pack up. Segment-by-segment traffic monitoring from your campsite all the way to your front door.</p>
+    <ul class="feat-bullets">
+      <li>Live ETA with real-time delay calculation</li>
+      <li>Route breakdown: clear, slow, or jammed per segment</li>
+      <li>Jam alert with alternate route suggestion</li>
+      <li>Auto-refresh every 30 seconds</li>
+    </ul>
+  </div>
+  <div class="feat-visual">
+    <div class="feat-visual-icon">🚦</div>
+    <p class="feat-visual-label">47 min home</p>
+    <p class="feat-visual-sub">Live traffic</p>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="lp-cta">
+  <h2>Camp Smart. Weather & Drive.</h2>
+  <p>Download BehindCamping and head out with confidence.</p>
+  <a href="#" class="btn-dl">Download on the App Store</a>
+  <p class="platform-note">iPhone · iOS 17 or later · Free</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 BehindCamping. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms-of-use.html">Terms</a> &nbsp;|&nbsp; <a href="support.html">Support</a></p>
+</footer>
+
+</body>
+</html>
