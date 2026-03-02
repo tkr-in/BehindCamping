@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — BehindCamping</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .support-hero {
+    background: var(--forest);
+    padding: 72px 32px 64px;
+    text-align: center;
+  }
+  .support-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 48px);
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+  .support-hero p {
+    color: rgba(255,255,255,0.45);
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .support-body {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+
+  .faq-section h2 {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--pine);
+    margin-bottom: 32px;
+  }
+
+  .faq-item {
+    border-top: 1px solid var(--mist);
+    padding: 20px 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--mist); }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: #4a5e4b;
+    line-height: 1.65;
+  }
+  .faq-a a { color: var(--moss); }
+
+  .contact-box {
+    margin-top: 64px;
+    background: var(--pine);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .contact-box h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--mist);
+    margin-bottom: 10px;
+  }
+  .contact-box p {
+    color: rgba(255,255,255,0.45);
+    font-size: 14px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .contact-box a.btn-email {
+    display: inline-block;
+    background: var(--fern);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 32px;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .contact-box a.btn-email:hover { background: var(--moss); }
+  .response-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 16px;
+  }
+
+  .requirements {
+    margin-top: 56px;
+    padding: 32px;
+    background: #eef4ee;
+    border-left: 3px solid var(--fern);
+  }
+  .requirements h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--pine);
+    margin-bottom: 12px;
+  }
+  .requirements ul {
+    padding-left: 18px;
+  }
+  .requirements li {
+    font-size: 14px;
+    color: #4a5e4b;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Behind<span>Camping</span></a>
+  <ul class="nav-links">
+    <li><a href="marketing.html">Features</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="privacy-policy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<div class="support-hero">
+  <p class="tag" style="margin-bottom:20px;">Support</p>
+  <h1>How can we help?</h1>
+  <p>Find answers to common questions or reach out directly. We aim to respond within one business day.</p>
+</div>
+
+<div class="support-body">
+
+  <!-- REQUIREMENTS -->
+  <div class="requirements">
+    <h3>System Requirements</h3>
+    <ul>
+      <li>iPhone running iOS 17 or later</li>
+      <li>iPhone with A12 Bionic chip or later recommended for AR features</li>
+      <li>Active internet connection required for weather, map, and traffic data</li>
+      <li>Camera, location, and motion permissions required for full functionality</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" style="margin-top:56px;">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">The app is asking for location permission. Is this required?</p>
+      <p class="faq-a">Location permission is required for the Nearby Shops map and the Traffic Radar tab. You can use the Weather and Camera tabs without granting location access. You can change permissions at any time in iPhone Settings > Privacy & Security > Location Services.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">The 3D Camera does not open. What should I do?</p>
+      <p class="faq-a">Go to iPhone Settings > Privacy & Security > Camera and make sure BehindCamping is enabled. If permission is already granted, try closing the app fully and reopening it. ARKit requires an A12 chip or later; older devices are not supported for the 3D camera feature.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Weather data looks incorrect or outdated.</p>
+      <p class="faq-a">Weather forecasts are pulled from a third-party data provider and update periodically. Pull down to refresh on the weather tab. If you are in a remote area with poor connectivity, data may reflect your last cached update.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">No shops are appearing on the map.</p>
+      <p class="faq-a">Make sure location permission is granted and that you have an active internet connection. The map shows shops within a defined radius of your current location. If you are in a very remote area, there may genuinely be no registered shops nearby.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Traffic information is not updating.</p>
+      <p class="faq-a">Tap the refresh button in the top-right corner of the Traffic tab. Traffic data requires a live internet connection. Background location updates must also be enabled if you want traffic to refresh while the app is not in the foreground.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I delete my data?</p>
+      <p class="faq-a">BehindCamping does not store personal data on external servers. Deleting the app from your device removes all locally stored app data. For any data shared with third-party providers during your session, refer to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">The app crashes on launch.</p>
+      <p class="faq-a">Ensure your iPhone is running iOS 17 or later. Try deleting the app and reinstalling from the App Store. If the issue persists, contact us with your device model and iOS version.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Send us a message and include your device model, iOS version, and a description of the issue.</p>
+    <a href="mailto:support@behindcamping.com" class="btn-email">Email Support</a>
+    <p class="response-note">support@behindcamping.com &nbsp;·&nbsp; Response within 1 business day</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 BehindCamping. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms-of-use.html">Terms</a></p>
+</footer>
+
+</body>
+</html>
