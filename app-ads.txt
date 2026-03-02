@@ -1,0 +1,15 @@
+# app-ads.txt — BehindCamping
+# https://behindcamping.com/app-ads.txt
+# Last updated: 2025-06-02
+#
+# This file declares authorized digital sellers for BehindCamping.
+# Format: <domain>, <publisher-id>, <account-type>, <certification-authority-id>
+#
+# Apple Search Ads
+adservice.apple.com, PLACEHOLDER_APPLE_PUBLISHER_ID, DIRECT
+
+# Google AdMob (if used)
+# admob.com, PLACEHOLDER_ADMOB_PUBLISHER_ID, DIRECT, f08c47fec0942fa0
+
+# Add additional authorized sellers below as needed.
+# Remove placeholder lines before going live and replace with your actual publisher IDs.
